@@ -1,4 +1,5 @@
 import operator
+import re
 from operator import itemgetter
 
 '''
@@ -6,7 +7,7 @@ Returns a list of tuples containing the top n frequent words in the given string
 In case of tie, words are arranged aplhabetically
 '''
 def countFreq(s, n=None):
-    words = s.lower().replace(',','').replace('.', ' ').split(' ')
+    words = re.sub('[^A-Za-z0-9]+', ' ', s.lower()).split(' ')
     uniqueWords = list(set(words))
     L = []
     for word in uniqueWords:
@@ -17,7 +18,7 @@ def countFreq(s, n=None):
     return L[:n]
 
 def main():
-    s = 'betty bought a bit of butter, but the butter was bitter, so she got a better butter, which was better than the bitter butter'
+    s = 'Betty bought a bit of Butter! but the butter was bitter, so she got a better butter, which was better than the bitter butter'
     print countFreq(s, 3)
     
 if __name__ == '__main__':
