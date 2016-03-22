@@ -20,6 +20,7 @@ def countFreq(s, n=None):
 def main():
     s = 'Betty bought a bit of Butter! but the butter was bitter, so she got a better butter, which was better than the bitter butter'
     print countFreq(s, 3)
+    print countFreq(s)
     
 if __name__ == '__main__':
     main()
