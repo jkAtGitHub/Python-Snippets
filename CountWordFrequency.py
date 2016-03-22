@@ -11,10 +11,14 @@ def countFreq(s, n=None):
     uniqueWords = list(set(words))
     L = []
     for word in uniqueWords:
+        #Add to a list, the unique word and the frequency of the words in the words list as a tuple 
         L.append((word, words.count(word)))
-        
+    
+    #Sort based on alphabetical order of the word
     L.sort(key=operator.itemgetter(0))
+    # Sort based on the count frequency
     L.sort(key=operator.itemgetter(1), reverse = True)
+    #Return Top n words and their count as List of tuple
     return L[:n]
 
 def main():
