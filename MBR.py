@@ -240,6 +240,5 @@ for X, Y, Z in zip(columns['x'], columns['y'], columns['Classification']):
 xlabel('x')
 ylabel('y')
 title('Points in Polygon algorithm')
-##grid(True)
 savefig("Results.png")
 show()
